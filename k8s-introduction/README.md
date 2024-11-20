@@ -1,6 +1,6 @@
-# Load Balancer
+# k8s-introduction
 
-## Steps to create a Load Balancer
+## Steps
 
 1. Create a pod
 
