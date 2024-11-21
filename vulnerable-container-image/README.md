@@ -50,14 +50,21 @@ This is an example of an attack caused by a vulnerable container image.
 > docker build -t web-container-image . --platform=linux/amd64 --load
 ```
 
-4. Apply k8s manifests
+4. Load the local images to minikube
+
+```bash
+> minikube image load vulnerable-container-image:latest
+> minikube image load web-container-image:latest
+```
+
+5. Apply k8s manifests
 
 ```bash
 > kubectl apply -f manifest/pod.yaml
 > kubectl apply -f manifest/service.yaml
 ```
 
-5. Assign the external IP to the load balancer
+6. Assign the external IP to the load balancer
 
 ```bash
 > minikube tunnel
