@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: signed
+  namespace: verify
+spec:
+  containers:
+  - name: signed
+    image: konippi/reliable-container-image@sha256:cdb0cf7f8d0e19dcf3fa2c9f1e612cdcb7d068834cb4065fcc1b3b84ea4f88cc
+    imagePullPolicy: Always
+    ports:
+    - containerPort: 80
+    resources:
+      requests:
+        memory: "64Mi"
+        cpu: "250m"
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+  imagePullSecrets:
+  - name: regcred
