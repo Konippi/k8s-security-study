@@ -1,6 +1,6 @@
-# Leakage of secret by `docker history`
+# Leakage of secret by `docker history` :key:
 
-this is a example of how to leak a secret by `docker history` command.
+this is an example of how to leak a secret by `docker history` command.
 
 ## Steps
 
