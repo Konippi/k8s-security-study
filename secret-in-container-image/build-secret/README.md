@@ -1,4 +1,4 @@
-# Use build secret in container image
+# Use build secret in container image :page_with_curl:
 
 This is an example of how to use a build secret in a container image.
 
@@ -26,6 +26,6 @@ This is an example of how to use a build secret in a container image.
 
     ```bash
     > docker run --rm build-secret-container-image cat /run/secrets/password
-    
+
     cat: can't open '/run/secrets/password': No such file or directory
     ```
