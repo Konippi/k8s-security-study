@@ -6,3 +6,4 @@ This repository is for studying container security in Kubernetes.
 - [vulnerable-container-image](vulnerable-container-image/README.md)
 - [Leak Container Image](leak-container-image/README.md)
 - [Reliable Container Image](reliable-container-image/README.md)
+- [Secret in Container Image](secret-in-container-image/README.md)
