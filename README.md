@@ -7,3 +7,7 @@ This repository is for studying container security in Kubernetes.
 - [Leak Container Image](leak-container-image/README.md)
 - [Reliable Container Image](reliable-container-image/README.md)
 - [Secret in Container Image](secret-in-container-image/README.md)
+- [Security Strategy](security-strategy)
+    - [Delete Unnecessary Capabilities](security-strategy/delete-unnecessary-capabilities/README.md)
+    - [Enable Seccomp](security-strategy/enable-seccomp/README.md)
+    - [Designate Container Execution User](security-strategy/designate-container-execution-user/README.md)
