@@ -7,8 +7,8 @@ This strategy enables Seccomp to restrict the system calls available to a proces
 1. Deploy a pod with Seccomp enabled.
 
     ```bash
-    > kubectl apply -f default-seccomp-pod.yaml
-    > kubectl exec -it default-seccomp-pod -- /bin/bash
+    > kubectl apply -f pod.yaml
+    > kubectl exec -it default-seccomp -- /bin/bash
     ```
 2. Check the available system calls.
 

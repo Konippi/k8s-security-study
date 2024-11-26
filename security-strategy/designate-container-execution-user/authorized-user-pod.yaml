@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: authorized-user
+  labels:
+    app: authorized-user
+spec:
+  containers:
+    - name: authorized-user
+      image: designate-user-container-image
+      command: ["/bin/sh", "-c", "while :; do echo 'by root user' >> author.txt; sleep 10; done"]
+      imagePullPolicy: Never
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+      resources:
+        requests:
+          memory: "64Mi"
+          cpu: "250m"
+        limits:
+          memory: "128Mi"
+          cpu: "500m"
