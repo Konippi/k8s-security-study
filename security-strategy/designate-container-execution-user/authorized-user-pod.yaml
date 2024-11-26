@@ -11,6 +11,7 @@ spec:
       command: ["/bin/sh", "-c", "while :; do echo 'by root user' >> author.txt; sleep 10; done"]
       imagePullPolicy: Never
       securityContext:
+        runAsNonRoot: true
         runAsUser: 1000
         runAsGroup: 1000
       resources:

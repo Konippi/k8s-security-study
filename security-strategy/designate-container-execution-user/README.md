@@ -26,8 +26,8 @@ This strategy is about designating a container execution user for restricting th
 4. Check the difference between authorized and unauthorized users.
 
     ```bash
-    > k logs authorized-user-pod
-    > k logs unauthorized-user-pod
+    > k logs authorized-user
+    > k logs unauthorized-user
     /bin/sh: 1: cannot create author.txt: Permission denied
     /bin/sh: 1: cannot create author.txt: Permission denied
     /bin/sh: 1: cannot create author.txt: Permission denied
