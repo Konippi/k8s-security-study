@@ -43,7 +43,7 @@ This repository is an example of how to make the container image reliable.
 2. Build the container image
 
     ```bash
-    > docker build -t reliable-container-image .
+    > docker buildx build -t reliable-container-image .
     ```
 
 3. Push the container image to the container registry

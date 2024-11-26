@@ -35,19 +35,19 @@ This is an example of an attack caused by a vulnerable container image.
 2. Build the vulnerable container image
 
 ```bash
-> docker build -t vulnerable-container-image .
+> docker buildx  build -t vulnerable-container-image .
 
 # for arm64
-> docker build -t vulnerable-container-image . --platform=linux/amd64 --load
+> docker buildx build -t vulnerable-container-image . --platform=linux/amd64 --load
 ```
 
 3. Build the web container image
 
 ```bash
-> docker build -t web-container-image .
+> docker buildx build -t web-container-image .
 
 # for arm64
-> docker build -t web-container-image . --platform=linux/amd64 --load
+> docker buildx build -t web-container-image . --platform=linux/amd64 --load
 ```
 
 4. Load the local images to minikube

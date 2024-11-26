@@ -7,7 +7,7 @@ this is an example of how to leak a secret by `docker history` command.
 1. Build a docker image with a secret.
 
     ```bash
-    > docker build --build-arg PASSWORD=${OPTIONAL_PASSWORD} -t docker-history-container-image .
+    > docker buildx build --build-arg PASSWORD=${OPTIONAL_PASSWORD} -t docker-history-container-image .
     ```
 
 2. Run `docker history` command to see the history of the image.

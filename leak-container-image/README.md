@@ -18,7 +18,7 @@ This is an example of an attack caused by a leak container image.
 1. Build the leak container image
 
     ```bash
-    > docker build -t leak-container-image .
+    > docker buildx build -t leak-container-image .
     ```
 
 2. Save the leak container image as a tar file
