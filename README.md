@@ -13,3 +13,4 @@ This repository is for studying container security in Kubernetes.
     - [Designate Container Execution User](security-strategy/designate-container-execution-user/README.md)
     - [Prohibit Privilege Escalation](security-strategy/prohibit-privilege-escalation/README.md)
     - [Scan Container Image and Manifest](security-strategy/scan-container-image-and-manifest/README.md)
+    - [Immutable Container](security-strategy/immutable-container/README.md)

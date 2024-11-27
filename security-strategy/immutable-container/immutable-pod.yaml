@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: immutable
+  labels:
+    app: immutable
+spec:
+  containers:
+  - name: immutable
+    image: ubuntu:20.04
+    command: ["/bin/bash", "-c", "while true; do sleep 1; done"]
+    securityContext:
+      readOnlyRootFilesystem: true
+    resources:
+      requests:
+        memory: "64Mi"
+        cpu: "250m"
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
