@@ -1,4 +1,4 @@
-# Restrict Container Execution Users
+# Designate Container Execution User
 
 This strategy is about designating a container execution user for restricting the user that containers run as.
 
