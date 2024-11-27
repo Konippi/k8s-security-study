@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: scan-target
+  labels:
+    app: scan-target
+spec:
+  containers:
+  - name: scan-target
+    image: ubuntu:20.04
+    command: ["/bin/sh", "-c", "while :; do sleep 10; done"]
+    imagePullPolicy: Always
+    resources:
+      requests:
+        memory: "64Mi"
+        cpu: "250m"
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
