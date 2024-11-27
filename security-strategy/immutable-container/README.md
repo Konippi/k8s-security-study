@@ -1,6 +1,13 @@
 # Immutable Container
 
 This strategy is about creating an immutable container that cannot be modified after deployment.
+Usually, OverlayFS created on the container host is mounted in the container root directory as the root file system with read-write status.
+
+OverlayFS is composed of the following directories:
+
+- `lowerdir`: the read-only directory that contains the original file system. (ex. container image)
+- `upperdir`: the read-write directory that contains the changes made to the original file system. (ex. logs)
+- `workdir`: the directory that supports the internal processing of OverlayFS. 
 
 ## Difference between mutable and immutable containers
 
