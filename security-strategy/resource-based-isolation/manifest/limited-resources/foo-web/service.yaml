@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: foo-web
+  labels:
+    app: foo-web
+spec:
+  selector:
+    app: foo-web
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 8001
+    targetPort: 8080

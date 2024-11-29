@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: limit-range
+  labels:
+    app: limit-range
+spec:
+  containers:
+  - name: limit-range
+    image: ubuntu:22.04

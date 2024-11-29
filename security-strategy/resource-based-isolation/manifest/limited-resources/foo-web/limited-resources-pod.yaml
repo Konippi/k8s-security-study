@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: foo-web
+  labels:
+    app: foo-web
+spec:
+  containers:
+  - name: foo-web
+    image: limited-resources-container-image
+    imagePullPolicy: Never
+    env:
+    - name: APP_NAME
+      value: "foo-web"
+    resources:
+      requests:
+        memory: "64Mi"
+        cpu: "250m"
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
