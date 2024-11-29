@@ -1,10 +1,11 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: limit-range
+  name: limit-range-pod
+  namespace: example-web
   labels:
-    app: limit-range
+    app: limit-range-pod
 spec:
   containers:
-  - name: limit-range
-    image: ubuntu:22.04
+  - name: limit-range-pod
+    image: nginx:1.25.5

@@ -4,8 +4,6 @@ This is an example of how to isolate resources in k8s environment.
 
 ## Limited Resources
 
-This strategy is a way to prevent certain pods from monopolizing Node's CPU and memory.
-
 1. Build a container image implementing http server.
 
     ```bash
@@ -93,4 +91,56 @@ This strategy is a way to prevent certain pods from monopolizing Node's CPU and 
     time: 4.921067
 
     > for i in {1..10}; do kill %$i; done
+    ```
+
+## Limit Range
+
+1. Deploy a pod with namespace and limit range.
+
+    ```bash
+    > kubectl apply -f manifest/limit-range/namespace.yaml
+    > kubectl apply -f manifest/limit-range/limit-range.yaml
+    > kubectl apply -f manifest/limit-range/pod.yaml
+    ```
+
+2. Check the resource limits and requests of the pod.
+
+    ```bash
+    > kubectl describe pod limit-range-pod -n example-web
+    ...
+    Limits:
+      cpu:     500m
+      memory:  512Mi
+    Requests:
+      cpu:        250m
+      memory:     256Mi
+    ...
+    ```
+
+## Taint node
+
+1. Add a node to the minikube.
+
+    ```bash
+    > minikube node add --worker 2
+    ```
+
+2. Grant the node a taint.
+
+    ```bash
+    > kubectl taint nodes minikube-m02 dedicated=true:NoSchedule
+    ```
+
+3. Set a label to the node.
+   
+    ```bash
+    > kubectl label node minikube-m02 node-restriction.kubernetes.io/dedicated=true
+    ```
+
+4. Deploy a pod with a taint node.
+
+    ```bash
+    > kubectl apply -f manifest/taint-node/pod.yaml
+    NAME         READY   STATUS              RESTARTS   AGE   IP       NODE           NOMINATED NODE   READINESS GATES
+    taint-node   0/1     ContainerCreating   0          6s    <none>   minikube-m02   <none>           <none>
     ```
