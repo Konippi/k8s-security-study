@@ -15,3 +15,4 @@ This repository is for studying container security in Kubernetes.
     - [Scan Container Image and Manifest](security-strategy/scan-container-image-and-manifest/README.md)
     - [Immutable Container](security-strategy/immutable-container/README.md)
     - [Resource-Based Isolation](security-strategy/resource-based-isolation/README.md)
+    - [Strip Unnecessary Authority](security-strategy/strip-unnecessary-authority/README.md)
