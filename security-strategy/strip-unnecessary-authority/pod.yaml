@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: unnecessary-authority-pod
+  namespace: unnecessary-authority
+  labels:
+    app: unnecessary-authority
+spec:
+  containers:
+  - name: unnecessary-authority
+    image: ubuntu:22.04
+    command: ["/bin/sh", "-c", "while true; do sleep 10; done"]
+    resources:
+      requests:
+        cpu: "250m"
+        memory: "256Mi"
+      limits:
+        cpu: "500m"
+        memory: "512Mi"
+  serviceAccountName: unnecessary-authority-sa
