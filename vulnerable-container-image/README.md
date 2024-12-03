@@ -23,52 +23,53 @@ This is an example of an attack caused by a vulnerable container image.
 
 1. (Only for `arm64`) Set up for using `amd64` images
 
-```bash
-# create a new instance for using `amd64` images
-> docker buildx create --use
+  ```bash
+  # create a new instance for using `amd64` images
+  > docker buildx create --use
 
-# enable qemu-user-static for using `amd64` images
-> minikube ssh "sudo apt-get update && sudo apt-get -y install qemu-user-static"
-> minikube stop && minikube start
-```
+  # enable qemu-user-static for using `amd64` images
+  > minikube ssh "sudo apt-get update && sudo apt-get -y install qemu-user-static"
+  > minikube stop
+  > minikube start
+  ```
 
 2. Build the vulnerable container image
 
-```bash
-> docker buildx  build -t vulnerable-container-image .
+  ```bash
+  > docker buildx build -t vulnerable-container-image .
 
-# for arm64
-> docker buildx build -t vulnerable-container-image . --platform=linux/amd64 --load
-```
+  # for arm64
+  > docker buildx build -t vulnerable-container-image . --platform=linux/amd64 --load
+  ```
 
 3. Build the web container image
 
-```bash
-> docker buildx build -t web-container-image .
+  ```bash
+  > docker buildx build -t web-container-image .
 
-# for arm64
-> docker buildx build -t web-container-image . --platform=linux/amd64 --load
-```
+  # for arm64
+  > docker buildx build -t web-container-image . --platform=linux/amd64 --load
+  ```
 
 4. Load the local images to minikube
 
-```bash
-> minikube image load vulnerable-container-image:latest
-> minikube image load web-container-image:latest
-```
+  ```bash
+  > minikube image load vulnerable-container-image:latest
+  > minikube image load web-container-image:latest
+  ```
 
 5. Apply k8s manifests
 
-```bash
-> kubectl apply -f manifest/pod.yaml
-> kubectl apply -f manifest/service.yaml
-```
+  ```bash
+  > kubectl apply -f manifest/pod.yaml
+  > kubectl apply -f manifest/service.yaml
+  ```
 
 6. Assign the external IP to the load balancer
 
-```bash
-> minikube tunnel
-```
+  ```bash
+  > minikube tunnel
+  ```
 
 
 ## Attack Scenario
