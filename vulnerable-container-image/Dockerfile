@@ -1,6 +1,6 @@
 FROM debian:buster
 
-# Install Unnecessary Packages
+# Install unnecessary packages
 RUN apt update && \
     apt install -y apache2 libtinfo5 netcat sudo wget && \
     a2enmod cgid && \
