@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: vulnerable-pod
+  namespace: network-policy-ns
+  labels:
+    app: vulnerable-pod
+spec:
+  containers:
+  - name: vulnerable-pod
+    image: ubuntu:22.04
+    command: ["/bin/sh", "-c", "while true; do sleep 10; done"]
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+      requests:
+        memory: "64Mi"
+        cpu: "250m"
