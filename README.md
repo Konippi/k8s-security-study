@@ -17,3 +17,4 @@ This repository is for studying container security in Kubernetes.
     - [Resource-Based Isolation](security-strategy/resource-based-isolation/README.md)
     - [Strip Unnecessary Authority](security-strategy/strip-unnecessary-authority/README.md)
     - [Properly Manage Secrets](security-strategy/properly-manage-secrets/README.md)
+    - [Restrict Communications to Pod](security-strategy/restrict-communications-to-pod/README.md)
